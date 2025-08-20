@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formularios </title>
+<script src="main.js" defer></script>
+</head>
+<body>
+
+<h2>Login</h2>
+<form id="formLogin">
+    Usuario: <input name="usuario"><br>
+    Clave: <input name="clave" type="password"><br>
+    <button>Entrar</button>
+</form>
+<hr>
+
+</body>
+</html>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con color</title>
+    <style>
+        body {
+            background-color: lightblue;
+}
+    </style>
+</head>
+<body>
+    
+</body>
+
+<h2>Registro de Estudiantes</h2>
+<form id="formEst">
+    Nombre: <input name="nombre"><br>
+    Edad: <input name="edad"><br>
+    <button>Guardar</button>
+</form>
+<hr>
+
+</body>
+</html>
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con color</title>
+    <style>
+        body {
+            background-color: lightblue; 
+}
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+<h2>Registro de Docentes</h2>
+<form id="formDoc">
+    Nombre: <input name="nombre"><br>
+    Edad: <input name="edad"><br>
+    ID: <input name="id"><br>
+    <button>Guardar</button>
+</form>
+<hr>
+
+
+</body>
+</html>
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con color</title>
+    <style>
+        body {
+            background-color: lightblue; 
+}
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+<h2>Registro de Asignaturas</h2>
+<form id="formAsig">
+    Nombre: <input name="nombre"><br>
+    Nota: <input name="nota"><br>
+    <button>Guardar</button>
+</form>
+<hr>
+
+</body>
+</html>
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con color</title>
+    <style>
+        body {
+            background-color: lightblue;
+}
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+let intentos = 0;
+let maxIntentos = 3;
+let user = "admin";
+let pass = "1234";
+
+let estudiantes = [];
+let asignaturas = [];
+let docentes = [];
+
+
+function login(form) {
+let u = form.usuario.value;
+let p = form.clave.value;
+
+if (u === user && p === pass) {
+    alert("Bienvenido");
+} else {
+    intentos++;
+    if (intentos >= maxIntentos) {
+    alert("Usuario bloqueado");
+    form.usuario.disabled = true;
+    form.clave.disabled = true;
+    } else {
+    alert("Datos incorrectos. Intento " + intentos + " de " + maxIntentos);
+    }
+}
+return false;
+
+
+function guardarEstudiante(form) {
+let nombre = form.nombre.value;
+let edad = parseInt(form.edad.value);
+
+if (edad + "" === "NaN") {
+    alert("La edad debe ser un número");
+    return false;
+}
+
+estudiantes.push({ nombre, edad });
+alert("Estudiante guardado");
+form.reset();
+return false;
+}
+
+
+function guardarAsignatura(form) {
+let nombre = form.nombre.value;
+
+let nota = parseInt(form.nota.value); if (nota + "" === "NaN") {
+    alert("La nota debe ser un número");
+    return false;
+}
+
+asignaturas.push({ nombre, nota });
+alert("Asignatura guardada");
+form.reset();
+return false;
+}
+
+
+function guardarDocente(form) {
+let nombre = form.nombre.value;
+let edad = parseInt(form.edad.value);
+let id = form.id.value;
+
+if (edad + "" === "NaN") {
+    alert("La edad debe ser un número");
+    return false;
+}
+
+if (edad < 18) {
+    alert("El docente debe ser mayor de edad");j
+    return false;
+}
+
+docentes.push({ nombre, edad, id });
+alert("Docente guardado");
+form.reset();
+return false;
+}
+
+
+  }
+
+
+</html>
