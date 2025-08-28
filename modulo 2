@@ -1,0 +1,80 @@
+Control De Docentes 
+public class Materia {
+    
+    
+    private String nombre;
+    private String horario; 
+    private String salon;
+
+    // Constructor vacío
+    public Materia() {
+    }
+
+    // Constructor con parámetros
+    public Materia(String nombre, String horario, String salon) {
+        this.setNombre(nombre);
+        this.setHorario(horario);
+        this.setSalon(salon);
+    }
+
+    // Getters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public String getSalon() {
+        return salon;
+    }
+
+    // Setters con validaciones
+    public void setNombre(String nombre) {
+        if (nombre == null || nombre.isEmpty()) {
+            this.nombre = "Materia sin nombre";
+        } else {
+            this.nombre = nombre;
+        }
+    }
+
+    public void setHorario(String horario) {
+        if (horario == null || horario.isEmpty()) {
+            this.horario = "Horario no definido";
+        } else {
+            this.horario = horario;
+        }
+    }
+
+    public void setSalon(String salon) {
+        if (salon == null || salon.isEmpty()) {
+            this.salon = "Sin asignar";
+        } else {
+            this.salon = salon;
+        }
+    }
+
+    // Métodos de comportamiento
+    public void iniciarClase() {
+        System.out.println("Iniciando la clase de " + this.nombre + " en el salón " + this.salon + " (" + this.horario + ")...");
+        esperarUnMomento();
+        System.out.println("La clase de " + this.nombre + " ha comenzado.");
+    }
+
+    public void terminarClase() {
+        System.out.println("Finalizando la clase de " + this.nombre + "...");
+        esperarUnMomento();
+        System.out.println("La clase de " + this.nombre + " ha terminado.");
+    }
+
+    // Método privado de pausa
+    private void esperarUnMomento() {
+        try {
+            Thread.sleep(1000); // pausa de 1 segundo
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+}
+
