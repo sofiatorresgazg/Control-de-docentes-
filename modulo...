@@ -1,0 +1,29 @@
+control de docehntes 
+public class App {
+    public static void main(String[] args) {
+
+        Profesor carlos = new Profesor("Carlos Ramírez", 45, "carlos@colegio.edu");
+        Profesor maria = new Profesor("María López", 38, "maria@colegio.edu");
+        Profesor laura = new Profesor("Laura Gómez", 29, "laura@colegio.edu");
+        Profesor valentina = new Profesor("Valentina Torres", 33, "valentina@colegio.edu");
+
+        System.out.println("=== Datos de los profesores ===");
+        System.out.println("Nombre: " + carlos.getNombre() + ", Edad: " + carlos.getEdad() + ", Email: " + carlos.getEmail());
+        System.out.println("Nombre: " + maria.getNombre() + ", Edad: " + maria.getEdad() + ", Email: " + maria.getEmail());
+        System.out.println("Nombre: " + laura.getNombre() + ", Edad: " + laura.getEdad() + ", Email: " + laura.getEmail());
+        System.out.println("Nombre: " + valentina.getNombre() + ", Edad: " + valentina.getEdad() + ", Email: " + valentina.getEmail());
+
+        System.out.println("\n=== Interacciones ===");
+        carlos.saludar();
+        carlos.enseñar();
+
+        maria.saludar();
+        maria.enseñar();
+
+        laura.saludar();
+        laura.enseñar();
+
+        valentina.saludar();
+        valentina.enseñar();
+    }
+}
