@@ -1,0 +1,31 @@
+Control De docentes
+public class App {
+public static void main(String[] args) {
+        
+        Profesor carlos = new Profesor("Carlos Ramírez", 45, "carlos@colegio.edu");
+        Profesor laura = new Profesor("Laura Gómez", 34, "laura@colegio.edu");
+
+
+        Materia matematicas = new Materia("Matemáticas", "Lunes 8am - 10am", "A101");
+        Materia historia = new Materia("Historia", "Martes 9am - 11am", "B203");
+
+        System.out.println("Profesores");
+        System.out.println("Nombre: " + carlos.getNombre() + " | Edad: " + carlos.getEdad() + " | Email: " + carlos.getEmail());
+        System.out.println("Nombre: " + laura.getNombre() + " | Edad: " + laura.getEdad() + " | Email: " + laura.getEmail());
+
+        System.out.println("Materias");
+        System.out.println("Materia: " + matematicas.getNombre() + " | 
+Horario: " + matematicas.getHorario() + " | Salón: " + matematicas.getSalon());
+        System.out.println("Materia: " + historia.getNombre() + " | Horario: " + historia.getHorario() + " | Salón: " + historia.getSalon());
+
+        
+        System.out.println("Simulación ");
+        carlos.saludar();
+        matematicas.iniciarClase();
+        matematicas.terminarClase();
+
+        laura.saludar();
+        historia.iniciarClase();
+        historia.terminarClase();
+    }
+}
